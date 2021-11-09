@@ -7,9 +7,13 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import {Link, NavLink} from "react-router-dom";
+import UseAuth from "../../Hooks/UseAuth";
+import {Box} from "@mui/material";
 
 
 const NavigationHeader = () => {
+    const{logout,user}=UseAuth();
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -33,7 +37,36 @@ const NavigationHeader = () => {
                     <Typography variant="h6" className={classes.title}>
                       Doctors Portal
                     </Typography>
-                    <Button color="inherit">Login</Button>
+
+                    <NavLink
+                        style={{ textDecoration: 'none', color: 'white' }}
+                        to="/home">
+                        <Button color="inherit">Home</Button>
+                    </NavLink>
+                    <NavLink
+                        style={{ textDecoration: 'none', color: 'white' }}
+                        to="/appoinment">
+                        <Button color="inherit">Appoinment</Button>
+                    </NavLink>
+
+                    {
+                        user?.email?
+
+                            <Box>
+                                <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard">
+                                    <Button color="inherit">Dashboard</Button>
+                                </NavLink>
+                                <Button onClick={logout} color="inherit">Log Out</Button>
+                                <Button  color="inherit">  {user.displayName}</Button>
+
+                            </Box>
+                            :   <NavLink style={{ textDecoration: 'none' }} to="/login">
+                                <Button color="inherit">Login</Button>
+                                 </NavLink>
+                    }
+
+
+
                 </Toolbar>
             </AppBar>
         </div>
