@@ -8,6 +8,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import {Link} from "react-router-dom";
 
 const Appoinmentd = ({date}) => {
     const {user}=UseAuth();
@@ -48,6 +49,10 @@ const Appoinmentd = ({date}) => {
                                 <TableCell align="right">{row.time}</TableCell>
                                 <TableCell align="right">{row.serviceName}</TableCell>
                                 <TableCell align="right">{row.fat}</TableCell>
+                                <TableCell align="right">{row.payment ?
+                                    'Paid' :
+                                    <Link to={`/dashboard/payment/${row._id}`}><button>Pay</button></Link>
+                                }</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

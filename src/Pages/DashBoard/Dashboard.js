@@ -29,6 +29,7 @@ import MakeAdmin from "./MakeAdmin";
 import AddDcotor from "./AddDcotor";
 import AdminRoute from "../../PrivateRoute/AdminRoute";
 import DashboardHome from "./DashboardHome";
+import Payment from "./Payment";
 const drawerWidth = 240;
 
 function Dashboard(props) {
@@ -128,6 +129,10 @@ function Dashboard(props) {
                     {/*    <Appoinmentd></Appoinmentd>*/}
 
                     {/*</Route>*/}
+
+                    <Route path={`${path}/payment/:appointmentId`}>
+                        <Payment></Payment>
+                    </Route>
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
