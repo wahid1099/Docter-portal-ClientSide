@@ -3,10 +3,13 @@ import {Typography} from "@mui/material";
 import Grid from '@mui/material/Grid';
 import doctorimg from '../../images/doctor-small.png';
 import { BsFillTelephoneFill ,BsPhoneFill} from "react-icons/bs";
+import Zoom from 'react-reveal/Zoom';
 
 const Ourdoctors = () => {
     return (
         <div>
+            <Zoom>
+
             <Typography variant="h4" sx={{ color: 'info.main', mb: 3 ,mt:3}}>Our Doctors</Typography>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={4}>
@@ -33,6 +36,8 @@ const Ourdoctors = () => {
                 </Grid>
 
             </Grid>
+
+            </Zoom>
         </div>
     );
 };

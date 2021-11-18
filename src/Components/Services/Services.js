@@ -7,6 +7,8 @@ import Service from "./Service";
 import fluoride from  '../../images/fluoride.png';
 import cavity from  '../../images/cavity.png';
 import whitening from  '../../images/whitening.png';
+import Rotate from 'react-reveal/Rotate';
+
 const services = [
     {
         name: 'Fluoride Treatment',
@@ -28,6 +30,7 @@ const services = [
 
 const Services = () => {
     return (
+        <Rotate top left>
         <Box sx={{ flexGrow: 1 }}>
             <Container>
                 <Typography sx={{ fontWeight: 500, m: 2, color: 'success.main' }} variant="h6" component="div">
@@ -46,6 +49,7 @@ const Services = () => {
                 </Grid>
             </Container>
         </Box>
+        </Rotate>
     );
 };
 

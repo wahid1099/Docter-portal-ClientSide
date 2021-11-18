@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import chair from '../../images/chair.png';
+import Bounce from 'react-reveal/Bounce';
 const bannerBg={
     background:`url(${bg})`,
 
@@ -17,6 +18,7 @@ const verticalCenter={
 }
 const Banner = () => {
     return (
+        <Bounce left>
         <Container style={bannerBg} sx={{flexGrow:1,mt:6}}>
             <Grid container spacing={2}>
                 <Grid item style={{...verticalCenter, textAlign: 'left' }} xs={12} md={6}>
@@ -44,6 +46,7 @@ const Banner = () => {
             </Grid>
             
         </Container>
+        </Bounce>
     );
 };
 

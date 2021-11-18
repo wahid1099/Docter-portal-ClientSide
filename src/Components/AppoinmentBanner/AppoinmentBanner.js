@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import doctor from '../../images/doctor.png';
 import bg from '../../images/appointment-bg.png';
 import { Button, Typography } from '@mui/material';
+import Zoom from 'react-reveal/Zoom';
 
 const appointmentBanner = {
     background: `url(${bg})`,
@@ -14,6 +15,7 @@ const appointmentBanner = {
 
 const AppointmentBanner = () => {
     return (
+        <Zoom>
         <Box style={appointmentBanner} sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
@@ -42,6 +44,7 @@ const AppointmentBanner = () => {
                 </Grid>
             </Grid>
         </Box>
+            </Zoom>
     );
 };
 
